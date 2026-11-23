@@ -65,6 +65,35 @@ function App() {
     } catch (error) {}
   }
 
+  async function excluirProduto(idProduto) {
+    try {
+      const resultado = await fetch(
+        `http://localhost:3000/produtos/${idProduto}`,
+        {
+          method: "DELETE",
+        },
+      );
+
+      setListaProdutos(
+        listaProdutos.filter((produtoFilter) => produtoFilter.id !== idProduto),
+      );
+    } catch (error) {}
+  }
+
+  async function excluirTudo() {
+    try {
+      await Promise.all(
+        listaProdutos.map((produtoMap) =>
+          fetch(`http://localhost:3000/produtos/${produtoMap.id}`, {
+            method: "DELETE",
+          }),
+        ),
+      );
+
+      setListaProdutos([]);
+    } catch (error) {}
+  }
+
   return (
     <div className="container">
       <div className="box-form">
@@ -91,11 +120,14 @@ function App() {
             id={produtoMap.id}
             produto={produtoMap}
             editarProduto={editarProduto}
+            excluirProduto={excluirProduto}
           />
         ))}
       </div>
       {listaProdutos.length > 0 && (
-        <button className="delete-all">Excluir Tudo</button>
+        <button className="delete-all" onClick={excluirTudo}>
+          Excluir Tudo
+        </button>
       )}
     </div>
   );
