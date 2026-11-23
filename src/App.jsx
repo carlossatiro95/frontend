@@ -114,7 +114,7 @@ function App() {
             className="button-darkMode"
             onClick={() => setDarkMode(!darkMode)}
           >
-            Tema
+           Mudar Tema
           </button>
           <h1>Cadastro de produtos</h1>
           <input
