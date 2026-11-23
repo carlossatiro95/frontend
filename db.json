@@ -1,3 +1,20 @@
 {
-  "produtos": []
+  "produtos": [
+    {
+      "nome": "mouse gamer",
+      "preço": "777",
+      "id": "QRuRvSQVkS0"
+    },
+    {
+      "nome": "teclado zzzz",
+      "preço": "456",
+      "id": "PivEAzHUaRo"
+    },
+    {
+      "nome": "cadeira",
+      "preço": "000",
+      "id": "Yd7m_JAw3TI"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

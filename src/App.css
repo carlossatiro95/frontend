@@ -99,7 +99,7 @@ input {
 .info-produto > p > span {
   color: rgb(204, 221, 50);
 }
-.input-product {
+.inputs-editar {
   display: flex;
   flex-direction: column;
   gap: 20px;
